@@ -43,3 +43,37 @@ If:
 ---
 
 ## 🗂️ Project Structure
+FraudDetection/
+│
+├── main.R # Runs complete workflow
+├── dataset.R # Generates transaction data
+├── zscore.R # Statistical calculations
+├── visualize.R # Visualization of results
+├── report.R # Report generation
+├── fraud_detection_plot.png # Output visualization
+├── report.txt # Generated report
+├── README.md # Project documentation
+└── .gitignore # Ignore unnecessary files
+
+
+---
+
+## ⚙️ Technologies Used
+
+- **Programming Language:** R  
+- **Statistical Method:** Z-Score Analysis  
+- **Visualization:** Base R Plotting  
+- **Algorithm Type:** Statistical Anomaly Detection  
+
+---
+
+## ▶️ How to Run the Project
+
+Step 1: Open R or RStudio  
+
+Step 2: Set working directory to project folder  
+
+Step 3: Run:
+
+```r
+source("main.R")
