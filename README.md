@@ -46,13 +46,21 @@ If:
 FraudDetection/
 │
 ├── main.R # Runs complete workflow
+
 ├── dataset.R # Generates transaction data
+
 ├── zscore.R # Statistical calculations
+
 ├── visualize.R # Visualization of results
+
 ├── report.R # Report generation
+
 ├── fraud_detection_plot.png # Output visualization
+
 ├── report.txt # Generated report
+
 ├── README.md # Project documentation
+
 └── .gitignore # Ignore unnecessary files
 
 
