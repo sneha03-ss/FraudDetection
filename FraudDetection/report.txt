@@ -1,0 +1,104 @@
+=============================================================
+     FRAUD TRANSACTION DETECTION — ACADEMIC REPORT
+     Method: Statistical Z-Score Analysis in R
+=============================================================
+
+Report Generated : 2026-04-14 11:37:41
+Threshold Used   :  ±2.5 Standard Deviations
+Total Records    :  30
+
+-------------------------------------------------------------
+SECTION 1: SUMMARY STATISTICS
+-------------------------------------------------------------
+
+  Mean Transaction Amount  : $749.4947
+  Standard Deviation       : $1479.4672
+  Total Transactions       :  30
+  Fraudulent Transactions  :  2
+  Normal Transactions      :  28
+  Fraud Detection Rate     :  6.67%
+
+-------------------------------------------------------------
+SECTION 2: TRANSACTION-LEVEL RESULTS
+-------------------------------------------------------------
+
+  Transaction   Amount (USD)  Z-Score     Status    
+  ----------    ------------  --------    ------    
+  T01           120.50        -0.4251     Normal    
+  T02           230.00        -0.3511     Normal    
+  T03           85.75         -0.4486     Normal    
+  T04           310.20        -0.2969     Normal    
+  T05           150.00        -0.4052     Normal    
+  T06           45.30         -0.4760     Normal    
+  T07           275.90        -0.3201     Normal    
+  T08           190.00        -0.3782     Normal    
+  T09           60.10         -0.4660     Normal    
+  T10           410.00        -0.2295     Normal    
+  T11           3500.00       1.8591      Normal    
+  T12           130.75        -0.4182     Normal    
+  T13           220.40        -0.3576     Normal    
+  T14           99.99         -0.4390     Normal    
+  T15           175.60        -0.3879     Normal    
+  T16           4800.00       2.7378      FRAUD       *** FRAUD ***
+  T17           305.00        -0.3004     Normal    
+  T18           72.50         -0.4576     Normal    
+  T19           260.30        -0.3307     Normal    
+  T20           145.80        -0.4080     Normal    
+  T21           5200.00       3.0082      FRAUD       *** FRAUD ***
+  T22           380.00        -0.2497     Normal    
+  T23           115.25        -0.4287     Normal    
+  T24           200.00        -0.3714     Normal    
+  T25           55.00         -0.4694     Normal    
+  T26           340.90        -0.2762     Normal    
+  T27           4100.00       2.2647      Normal    
+  T28           90.60         -0.4454     Normal    
+  T29           165.00        -0.3951     Normal    
+  T30           250.00        -0.3376     Normal    
+
+-------------------------------------------------------------
+SECTION 3: IDENTIFIED FRAUD TRANSACTIONS
+-------------------------------------------------------------
+
+  Transaction T16   Amount: $4800.00     Z-Score: +2.7378
+  Transaction T21   Amount: $5200.00     Z-Score: +3.0082
+
+-------------------------------------------------------------
+SECTION 4: METHODOLOGY
+-------------------------------------------------------------
+
+  The Z-Score method detects statistical outliers by measuring
+  how many standard deviations a data point lies from the mean.
+
+  Step 1 — Mean Calculation (manual loop):
+    mean = SUM(x_i) / n
+    mean = $749.4947
+
+  Step 2 — Standard Deviation (manual loop):
+    variance = SUM((x_i - mean)^2) / (n - 1)
+    std_dev  = SQRT(variance)
+    std_dev  = $1479.4672
+
+  Step 3 — Z-Score per Transaction:
+    Z = (x_i - mean) / std_dev
+
+  Step 4 — Classification:
+    |Z| > 2.5  →  FRAUD
+    |Z| ≤ 2.5  →  Normal
+
+-------------------------------------------------------------
+SECTION 5: OBSERVATIONS & CONCLUSIONS
+-------------------------------------------------------------
+
+  1. Out of 30 transactions, 2 were flagged as fraudulent.
+  2. The fraud detection rate was 6.67%.
+  3. Fraudulent transactions were identified at IDs: T16, T21
+  4. All fraudulent transactions showed amounts significantly
+     above the mean, indicating unusually large purchases.
+  5. A Z-score threshold of ±2.5 was chosen to reduce
+     false positives while catching clear outliers.
+  6. The method is fully manual — no built-in R statistical
+     functions (mean, sd, var, scale) were used.
+
+=============================================================
+                      END OF REPORT
+=============================================================
